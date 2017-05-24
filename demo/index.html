@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>polymer-element demo</title>
+
+   <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../bower_components/polymer-element.html">
+
+
+	<link rel="import" href="../bower_components/app-layout/app-layout.html">
+
+	<custom-style>
+	  <style is="custom-style">
+		html, body {
+		  margin: 0;
+		  font-family: 'Roboto', 'Noto', sans-serif;
+		  -webkit-font-smoothing: antialiased;
+		  background: #f1f1f1;
+		  max-height: 368px;
+		}
+		app-toolbar {
+		  background-color: #4285f4;
+		  color: #fff;
+		}
+
+		paper-icon-button {
+		  --paper-icon-button-ink-color: white;
+		}
+
+		paper-icon-button + [main-title] {
+		  margin-left: 24px;
+		}
+
+		app-header {
+		  @apply --layout-fixed-top;
+		  color: #fff;
+		  --app-header-background-rear-layer: {
+			background-color: #ef6c00;
+		  };
+		}
+		app-drawer {
+		  --app-drawer-scrim-background: rgba(0, 0, 0, 0.5);
+		  --app-drawer-content-container: {
+			background-color: #fff;
+			z-index:9;
+		  }
+		}
+		sample-content {
+		  padding-top: 64px;
+		}
+		.mn{cursor:pointer;}
+		.content{padding:30px;}
+		.drawer_cont{padding:20px;}
+	  </style>
+	</custom-style>
+
+  </head>
+  <body>
+
+	<app-header reveals>
+	<app-toolbar>
+	<paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>
+	<div class="mn" onclick="drawer.toggle()">## &nbsp;&nbsp;</div>
+	<div main-title>My app</div>
+	<paper-icon-button icon="delete"></paper-icon-button>
+	<paper-icon-button icon="search"></paper-icon-button>
+	<paper-icon-button icon="close"></paper-icon-button>
+	  </app-toolbar>
+	</app-header>
+
+	<app-drawer id="drawer" swipe-open>
+		<div class="drawer_cont">
+			menu content
+		</div>
+	</app-drawer>
+
+
+
+    <div class="vertical-section-container centered">
+      <h3>Basic polymer-element demo</h3>
+      <div class="content">
+		text area
+	  </div>
+    </div>
+  </body>
+</html>
